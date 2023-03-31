@@ -93,7 +93,7 @@ export const Chatbar: FC<Props> = ({
   };
 
   const highlightDrop = (e: any) => {
-    e.target.style.background = '#343541';
+    e.target.style.background = '#5f2efe';
   };
 
   const removeHighlight = (e: any) => {
@@ -118,7 +118,7 @@ export const Chatbar: FC<Props> = ({
 
   return (
     <div
-      className={`fixed top-0 bottom-0 z-50 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 transition-all sm:relative sm:top-0`}
+      className={`fixed top-0 bottom-0 z-50 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#232a52] p-2 transition-all sm:relative sm:top-0`}
     >
       <div className="flex items-center">
         <button

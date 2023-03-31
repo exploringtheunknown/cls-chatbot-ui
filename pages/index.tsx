@@ -26,7 +26,7 @@ import {
 } from '@/utils/app/conversation';
 import { saveFolders } from '@/utils/app/folders';
 import { exportData, importData } from '@/utils/app/importExport';
-import { savePrompts } from '@/utils/app/prompts';
+import { defaultPrompts, savePrompts } from '@/utils/app/prompts';
 import { IconArrowBarLeft, IconArrowBarRight } from '@tabler/icons-react';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -253,7 +253,7 @@ const Home: React.FC<HomeProps> = ({
           code: data.error?.code,
           messageLines: [data.error?.message],
         });
-      } catch (e) {}
+      } catch (e) { }
       setModelError(error);
       return;
     }
@@ -587,7 +587,9 @@ const Home: React.FC<HomeProps> = ({
 
     const prompts = localStorage.getItem('prompts');
     if (prompts) {
-      setPrompts(JSON.parse(prompts));
+      setPrompts([...defaultPrompts, ...JSON.parse(prompts)]);
+    } else {
+      setPrompts(defaultPrompts);
     }
 
     const conversationHistory = localStorage.getItem('conversationHistory');
@@ -623,7 +625,7 @@ const Home: React.FC<HomeProps> = ({
   return (
     <>
       <Head>
-        <title>Chatbot UI</title>
+        <title>QueenGPT</title>
         <meta name="description" content="ChatGPT but better." />
         <meta
           name="viewport"

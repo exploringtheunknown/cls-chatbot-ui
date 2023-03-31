@@ -76,7 +76,7 @@ export const ChatFolder: FC<Props> = ({
   };
 
   const highlightDrop = (e: any) => {
-    e.target.style.background = '#343541';
+    e.target.style.background = '#5f2efe';
   };
 
   const removeHighlight = (e: any) => {
@@ -103,7 +103,7 @@ export const ChatFolder: FC<Props> = ({
     <>
       <div className="relative flex items-center">
         {isRenaming ? (
-          <div className="flex w-full items-center gap-3 bg-[#343541]/90 p-3 rounded-lg">
+          <div className="flex w-full items-center gap-3 bg-[#5f2efe]/90 p-3 rounded-lg">
             {isOpen ? (
               <IconCaretDown size={18} />
             ) : (
@@ -121,7 +121,7 @@ export const ChatFolder: FC<Props> = ({
           </div>
         ) : (
           <button
-            className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-[#343541]/90`}
+            className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-[#5f2efe]/90`}
             onClick={() => setIsOpen(!isOpen)}
             onDrop={(e) => handleDrop(e, currentFolder)}
             onDragOver={allowDrop}

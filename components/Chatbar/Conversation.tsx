@@ -68,7 +68,7 @@ export const ConversationComponent: FC<Props> = ({
   return (
     <div className="relative flex items-center">
       {isRenaming && selectedConversation.id === conversation.id ? (
-        <div className="flex w-full items-center gap-3 bg-[#343541]/90 p-3 rounded-lg">
+        <div className="flex w-full items-center gap-3 bg-[#5f2efe]/90 p-3 rounded-lg">
           <IconMessage size={18} />
           <input
             className="mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 text-white outline-none focus:border-neutral-100"
@@ -81,11 +81,9 @@ export const ConversationComponent: FC<Props> = ({
         </div>
       ) : (
         <button
-          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-[#343541]/90 ${
-            loading ? 'disabled:cursor-not-allowed' : ''
-          } ${
-            selectedConversation.id === conversation.id ? 'bg-[#343541]/90' : ''
-          }`}
+          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-[#5f2efe]/90 ${loading ? 'disabled:cursor-not-allowed' : ''
+            } ${selectedConversation.id === conversation.id ? 'bg-[#5f2efe]/90' : ''
+            }`}
           onClick={() => onSelectConversation(conversation)}
           disabled={loading}
           draggable="true"
@@ -93,9 +91,8 @@ export const ConversationComponent: FC<Props> = ({
         >
           <IconMessage size={18} />
           <div
-            className={`relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3 ${
-              selectedConversation.id === conversation.id ? 'pr-12' : 'pr-1'
-            }`}
+            className={`relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3 ${selectedConversation.id === conversation.id ? 'pr-12' : 'pr-1'
+              }`}
           >
             {conversation.name}
           </div>
