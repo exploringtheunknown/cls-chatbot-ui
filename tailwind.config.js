@@ -7,12 +7,18 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'main': '#303F54',
+        'accent': '#C38B41',
+        'dark-text-bg': '#3D3C3C',
+      }
+    },
   },
   variants: {
     extend: {
       visibility: ["group-hover"],
     },
-   },
+  },
   plugins: [require('@tailwindcss/typography')],
 };

@@ -150,7 +150,7 @@ export const Chat: FC<Props> = memo(
     }, [messagesEndRef]);
 
     return (
-      <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#0C0D14]">
+      <div className="relative flex-1 overflow-hidden bg-white dark:bg-dark-text-bg">
         {!(apiKey || serverSideApiKeyIsSet) ? (
           <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
             <div className="text-center text-4xl font-bold text-black dark:text-white">
@@ -200,6 +200,9 @@ export const Chat: FC<Props> = memo(
               ref={chatContainerRef}
               onScroll={handleScroll}
             >
+              <div className="mx-auto flex w-[350px] sm:w-[600px] py-12">
+                <img src='/cls-logo.svg' className="w-full sm:w-1/2 mx-auto" />
+              </div>
               {conversation.messages.length === 0 ? (
                 <>
                   <div className="mx-auto flex w-[350px] flex-col space-y-10 pt-12 sm:w-[600px]">
@@ -209,7 +212,7 @@ export const Chat: FC<Props> = memo(
                           <Spinner size="16px" className="mx-auto" />
                         </div>
                       ) : (
-                        'Queen GPT'
+                        'CLS Chat UI'
                       )}
                     </div>
 
@@ -243,7 +246,7 @@ export const Chat: FC<Props> = memo(
                 </>
               ) : (
                 <>
-                  <div className="flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-[#0C0D14] dark:text-neutral-200">
+                  <div className="flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-dark-text-bg dark:text-neutral-200">
                     {t('Model')}: {conversation.model.name}
                     <button
                       className="ml-2 cursor-pointer hover:opacity-50"
@@ -288,7 +291,7 @@ export const Chat: FC<Props> = memo(
                   {loading && <ChatLoader />}
 
                   <div
-                    className="h-[162px] bg-white dark:bg-[#0C0D14]"
+                    className="h-[162px] bg-white dark:bg-dark-text-bg"
                     ref={messagesEndRef}
                   />
                 </>

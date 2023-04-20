@@ -42,7 +42,7 @@ export const PromptComponent: FC<Props> = ({
   return (
     <div className="relative flex items-center">
       <button
-        className="flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-[#5f2efe]/90"
+        className="flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-accent/90"
         draggable="true"
         onClick={(e) => {
           e.stopPropagation();
@@ -56,7 +56,7 @@ export const PromptComponent: FC<Props> = ({
         }}
       >
         {prompt.locked ? (
-          <IconTower size={18} color='#96fa9d' />
+          <IconTower size={18} />
         ) : (
           <IconBulbFilled size={18} />
         )}
